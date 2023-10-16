@@ -6,11 +6,13 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.movementapp.databinding.ActivityMainBinding
 
+private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity(), SensorEventListener {
     lateinit var sensorManager: SensorManager
     private lateinit var binding: ActivityMainBinding
@@ -52,9 +54,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
 
         if (x > viewModel.threshold || (y - 9.8) > viewModel.threshold || z > viewModel.threshold) {
-            // Have to log it
-            print("Significant movement detected")
+//            print("Significant movement detected")
             Toast.makeText(this,"Significant movement detected", Toast.LENGTH_SHORT).show()
+            Log.d(TAG, "Significant movement detected")
         }
         binding.accelerometer.text = "X: ${x}\nY: ${y}\nZ: ${z}"
 
