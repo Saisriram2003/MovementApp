@@ -11,6 +11,7 @@ import android.widget.SeekBar
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.movementapp.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity(), SensorEventListener {
